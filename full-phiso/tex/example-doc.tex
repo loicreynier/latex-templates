@@ -1,0 +1,85 @@
+\documentclass{article}
+
+\usepackage{phiso}
+\usepackage[backend=biber]{biblatex}
+\usepackage[record,abbreviations]{glossaries-extra}
+
+\input{tex/pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\begin{filecontents}{bib/acronyms.bib}
+@abbreviation{GMR,
+  short = {GMR},
+  long = {Glacier Melt Rate},
+}
+\end{filecontents}
+\addbibresource{bib/references.bib}
+
+\begin{filecontents}{bib/references.bib}
+@article{hock2005glacier,
+  title={Glacier melt: a review of processes and their modelling},
+  author={Hock, Regine},
+  journal={Progress in physical geography},
+  volume={29},
+  number={3},
+  pages={362--391},
+  year={2005},
+  publisher={Sage Publications Sage CA: Thousand Oaks, CA}
+}
+\end{filecontents}
+\GlsXtrLoadResources[src={bib/acronyms}]
+
+\begin{filecontents}{data/StorglaciarenMelt.dat}
+Date       Melt
+2023-08-01 1.1
+2023-08-02 2.2
+2023-08-04 1.7
+2023-08-05 1.5
+2023-08-06 2.3
+\end{filecontents}
+
+\title{Glaciers go brrr}
+\author{Gigachad author}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+In this report, we will explore the
+various factors that influence fluid
+dynamics in glaciers and how they
+contribute to the formation and
+behavior of these natural structures.
+
+\section{Methods}
+
+We follow the glacier melting models established
+in \textcite{hock2005glacier}.
+\glspl{GMR}, $M$, are then computed from the available energy by
+\begin{equation}
+  M = \frac{Q_\text{M}}{\rho_\text{w}L_\text{f}}.
+\end{equation}
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        date coordinates in=x,
+        date ZERO=2023-08-01,
+        xticklabel=\day-\month,
+        xlabel=Date,
+        ylabel=Melt rate,
+      ]
+      \addplot[no markers] table[x=Date, y=Melt]{data/StorglaciarenMelt.dat};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Simulated energy-balance for the melt modelling
+    of Storglaciären, Sweden.}
+\end{figure}
+
+\printbibliography
+
+\end{document}

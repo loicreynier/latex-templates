@@ -1,0 +1,30 @@
+# Inspired from https://github.com/menozero/perltidy-prettier-style
+
+# -- General -----------------------------------------------------------------
+
+-w          # Show warnings
+-b          # Modify files...
+-bext='/'   # ... in place
+
+# -- Horizontal --------------------------------------------------------------
+
+-l=78
+-i=2
+-nsfs       # No space for semicolon in `for`
+-tso        # Tight secret operators
+-pt=2       # Parentheses tightness
+-sbt=2      # Square bracket tightness
+-bt=1       # Brace tightness
+-bbt=1      # Block brace tightness
+
+# -- Vertical ----------------------------------------------------------------
+
+-sot        # Stack opening tokens
+
+# -- Comments ----------------------------------------------------------------
+
+-nbbc       # No blank lines before comments
+-isbc       # Indent only spaced block comments
+-msc=1      # Minimal space number for side comments
+
+# vim: ft=conf

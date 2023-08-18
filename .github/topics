@@ -1,0 +1,7 @@
+latex
+nix
+templates
+reproducibility
+latexmk
+latexmkrc
+texlive
