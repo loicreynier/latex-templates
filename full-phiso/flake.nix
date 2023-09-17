@@ -47,8 +47,7 @@
           export SOURCE_DATE_EPOCH="${lastModified}"
           echo "$SOURCE_DATE_EPOCH"
           TMPDIR=$(mktemp -d)
-          mkdir -p "$TMPDIR/texmf-var"
-          mkdir "build"
+          mkdir -p "$TMPDIR/texmf-var" "build"
           ln -sf ../{bib,data,tex} -t "build"
           env TEXMFHOME="$TMPDIR" \
               TEXMFVAR="$TMPDIR/texmf-var" \
