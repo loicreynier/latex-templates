@@ -5,8 +5,9 @@ $silent = 1;
 
 # -- Build options -----------------------------------------------------------
 
-$out_dir  = "build";
-$pdf_mode = 4;      # LuaLaTeX
+$pdf_mode = 4;       # PDF LuaLaTeX
+$aux_dir  = "build"; # Build in this folder...
+$emulate_aux = 1;    # and move PDF in root (`$out_dir`)
 # Force reproducible  builds
 # Source: https://tex.stackexchange.com/questions/229605
 $pretex    = '\pdfvariable suppressoptionalinfo 512\relax';

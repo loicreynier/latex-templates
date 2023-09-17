@@ -58,8 +58,8 @@
         '';
         installPhase = ''
           mkdir -p $out
-          cp build/*.pdf $out/
-          rm -rf build
+          cp *.pdf $out/
+          rm -rf build *.pdf
         '';
       };
       devShells.default = pkgs.mkShell {
