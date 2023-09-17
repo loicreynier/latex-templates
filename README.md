@@ -52,7 +52,9 @@ Here is an example structure supported by the templates:
 project-root/
 │
 ├── document1.tex
+├── document1.pdf
 ├── document2.tex
+├── document2.pdf
 ├── figures/
 │   ├── figure1.tex
 │   ├── figure2.tex
@@ -64,8 +66,10 @@ project-root/
 │   └── ...
 │
 ├── build/
-│   ├── document1.pdf
-│   ├── document2.pdf
+│   ├── document1.aux
+│   ├── document1.log
+│   ├── document2.aux
+│   ├── document2.log
 │   └── ...
 │
 ├── .latexmkrc
