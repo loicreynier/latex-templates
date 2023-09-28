@@ -3,7 +3,7 @@
 /result
 
 # LaTeX builds
-*.pdf
-*.dvi
+/*.pdf
+/*.dvi
 /build
 /.cache
