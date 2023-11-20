@@ -27,7 +27,10 @@
               deadnix.enable = true;
               editorconfig-checker.enable = true;
               markdownlint.enable = true;
-              prettier.enable = true;
+              prettier = {
+                enable = true;
+                excludes = ["flake.lock"];
+              };
               statix.enable = true;
               typos.enable = true;
             };
